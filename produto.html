@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#173B2B" />
+  <meta name="description" content="Estilo Ativo - Confira as 3 fotos em alta definição, especificações e disponibilidade por tamanho. Faça seu pedido com atendimento direto pelo WhatsApp." />
+  
+  <title>Detalhes do Produto | Estilo Ativo</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="assets/images/total90-amarela-frente.png" />
+</head>
+<body class="pagina-produto">
+
+  <!-- ========================================================
+       1. CABEÇALHO DO PRODUTO
+       ======================================================== -->
+  <header class="cabecalho-site" role="banner">
+    <div class="container cabecalho-conteudo">
+      <a href="index.html" class="logo" aria-label="Estilo Ativo - Voltar para início">
+        <div class="logo-icone" aria-hidden="true">EA</div>
+        <span>Estilo</span>Ativo
+      </a>
+
+      <!-- Navegação de Retorno -->
+      <nav class="nav-menu" role="navigation" aria-label="Navegação secundária">
+        <a href="index.html#inicio" class="nav-link">Início</a>
+        <a href="index.html#total90" class="nav-link">Modelo Total 90</a>
+        <a href="index.html#catalogo" class="nav-link">Catálogo</a>
+        <a href="index.html#catalogo" class="btn-nav-catalogo">
+          <span>&larr; Voltar ao Catálogo</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========================================================
+       2. CONTEÚDO PRINCIPAL DO PRODUTO
+       ======================================================== -->
+  <main class="detalhe-produto-main">
+    <div class="container" id="detalhe-produto-container">
+      
+      <!-- Navegação de Migalhas (Breadcrumb) -->
+      <nav class="breadcrumb-nav" aria-label="Trilha de navegação">
+        <a href="index.html">Início</a>
+        <span class="separador">/</span>
+        <a href="index.html#catalogo">Catálogo de Camisetas</a>
+        <span class="separador">/</span>
+        <span class="atual" id="breadcrumb-produto-nome">Carregando camiseta...</span>
+      </nav>
+
+      <!-- Grade Principal do Produto: 3 Imagens + Compra e WhatsApp -->
+      <section class="produto-apresentacao-grid">
+        
+        <!-- COLUNA 1: GALERIA DAS 3 IMAGENS -->
+        <div class="produto-galeria-coluna">
+          <!-- Visualizador Principal da Foto -->
+          <div class="galeria-imagem-principal" id="galeria-imagem-principal-box">
+            <!-- Renderizado via produto-detalhe.js -->
+          </div>
+
+          <!-- Miniaturas com as 3 Fotos -->
+          <div class="galeria-miniaturas-container">
+            <span class="miniaturas-titulo">Clique para alternar entre as 3 fotos:</span>
+            <div class="galeria-miniaturas" id="galeria-miniaturas">
+              <!-- Renderizado via produto-detalhe.js -->
+            </div>
+          </div>
+        </div>
+
+        <!-- COLUNA 2: DADOS DO PRODUTO E BOTÃO WHATSAPP LOGO ABAIXO -->
+        <div class="produto-info-coluna">
+          <div class="produto-header-info">
+            <span class="badge-tag" id="detalhe-badge">Destaque</span>
+            <h1 class="produto-nome-destaque" id="detalhe-titulo">Carregando...</h1>
+            <p class="produto-modelo-subtitulo" id="detalhe-modelo">Carregando detalhes...</p>
+          </div>
+
+          <!-- Caixa de Preço -->
+          <div class="card-preco-box">
+            <span class="preco-rotulo">Preço Unitário de Lançamento</span>
+            <div class="preco-valor">
+              <span class="preco-moeda">R$</span>
+              <span class="preco-numero" id="detalhe-preco">75,00</span>
+            </div>
+            <span class="preco-pagamento">✓ Pagamento facilitado via Pix ou na entrega</span>
+          </div>
+
+          <!-- Descrição Detalhada -->
+          <div class="detalhe-descricao-box">
+            <p id="detalhe-descricao">Carregando descrição...</p>
+          </div>
+
+          <!-- Seletor de Tamanhos -->
+          <div class="seletor-tamanho-secao">
+            <div class="seletor-topo">
+              <label class="seletor-label">Escolha o seu tamanho:</label>
+              <button 
+                type="button" 
+                class="btn-guia-medidas-link" 
+                onclick="abrirModalMedidas()"
+              >
+                <img src="assets/icons/ruler.svg" alt="" width="14" height="14" />
+                Ver Tabela de Medidas
+              </button>
+            </div>
+
+            <!-- Botões G e GG -->
+            <div class="seletor-tamanhos-botoes" id="detalhe-seletor-botoes" role="radiogroup">
+              <!-- Renderizado via JS -->
+            </div>
+
+            <!-- Feedback de Estoque -->
+            <div class="feedback-estoque" id="detalhe-feedback-estoque"></div>
+          </div>
+
+          <!-- ========================================================
+               BOTÃO DO WHATSAPP LOGO ABAIXO DAS FOTOS E SELEÇÃO
+               ======================================================== -->
+          <div class="bloco-whatsapp-compra">
+            <button 
+              type="button" 
+              class="btn-whatsapp-produto" 
+              id="btn-whatsapp-detalhe"
+              onclick="dispararWhatsAppDetalhe()"
+              aria-label="Pedir no WhatsApp agora"
+            >
+              <img src="assets/icons/whatsapp.svg" alt="WhatsApp" class="icon-whatsapp" width="24" height="24" />
+              <div class="btn-whatsapp-textos">
+                <strong>Pedir no WhatsApp Agora</strong>
+                <span>Atendimento rápido para confirmar entrega</span>
+              </div>
+            </button>
+            <p class="nota-atendimento">
+              🔒 Seu pedido é confirmado diretamente com o vendedor no chat. Sem burocracia.
+            </p>
+          </div>
+
+          <!-- Diferenciais Rápidos -->
+          <ul class="card-beneficios" id="detalhe-especificacoes">
+            <!-- Renderizado via JS -->
+          </ul>
+        </div>
+      </section>
+
+      <!-- ========================================================
+           3. SEÇÃO MOSTRANDO AS 3 IMAGENS EM DETALHES
+           ======================================================== -->
+      <section class="secao-tres-fotos-exibicao">
+        <div class="secao-cabecalho">
+          <span class="secao-tag">Galeria Exclusiva</span>
+          <h2 class="secao-titulo">As 3 Imagens Oficiais do Modelo</h2>
+          <p class="secao-descricao">
+            Confira a visão frontal, traseira e os detalhes do tecido e acabamento em alta resolução.
+          </p>
+        </div>
+
+        <div class="grade-tres-fotos-layout" id="grade-tres-imagens">
+          <!-- Renderizado via produto-detalhe.js -->
+        </div>
+
+        <!-- Botão WhatsApp de Reforço no Final da Galeria de Fotos -->
+        <div class="reforco-whatsapp-box">
+          <div class="reforco-texto">
+            <h3>Gostou das 3 fotos deste modelo?</h3>
+            <p>Garanta já o seu tamanho disponível antes que o estoque esgote.</p>
+          </div>
+          <button 
+            type="button" 
+            class="btn-whatsapp" 
+            onclick="dispararWhatsAppDetalhe()"
+            style="max-width: 340px;"
+          >
+            <img src="assets/icons/whatsapp.svg" alt="" width="20" height="20" />
+            <span>Chamar no WhatsApp</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- ========================================================
+           4. OUTROS MODELOS DO CATÁLOGO
+           ======================================================== -->
+      <section class="secao-outros-modelos">
+        <div class="secao-cabecalho">
+          <span class="secao-tag">Explore Mais</span>
+          <h2 class="secao-titulo">Veja Também no Catálogo</h2>
+        </div>
+        <div class="outros-modelos-grid" id="outros-modelos-container">
+          <!-- Renderizado via JS -->
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ========================================================
+       5. MODAL GUIA DE MEDIDAS
+       ======================================================== -->
+  <aside class="modal-medidas" id="modal-medidas" role="dialog" aria-modal="true" aria-labelledby="modal-medidas-titulo">
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 class="modal-titulo" id="modal-medidas-titulo">Tabela de Medidas (cm)</h3>
+        <button 
+          type="button" 
+          class="btn-fechar-modal" 
+          id="fechar-modal-medidas" 
+          aria-label="Fechar guia de medidas"
+        >&times;</button>
+      </div>
+
+      <table class="tabela-medidas">
+        <thead>
+          <tr>
+            <th>Tamanho</th>
+            <th>Tórax</th>
+            <th>Comprimento</th>
+            <th>Manga</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>G</td>
+            <td>106 - 112 cm</td>
+            <td>74 cm</td>
+            <td>23 cm</td>
+          </tr>
+          <tr>
+            <td>GG</td>
+            <td>114 - 122 cm</td>
+            <td>77 cm</td>
+            <td>24 cm</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="modal-dica">
+        <strong>Dica de caimento:</strong> Compare as medidas com uma camiseta que vista bem em você. Se preferir um estilo mais solto e esportivo, sugerimos optar pelo tamanho GG.
+      </div>
+    </div>
+  </aside>
+
+  <!-- ========================================================
+       6. MODAL LIGHTBOX DE ZOOM DA IMAGEM
+       ======================================================== -->
+  <div class="modal-zoom-imagem" id="modal-zoom-imagem" onclick="fecharZoomImagem()">
+    <div class="modal-zoom-conteudo" onclick="event.stopPropagation()">
+      <button type="button" class="btn-fechar-zoom" onclick="fecharZoomImagem()" aria-label="Fechar visualização">&times;</button>
+      <img src="" alt="Imagem ampliada" id="zoom-imagem-src" />
+      <p id="zoom-imagem-legenda" class="zoom-legenda"></p>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       7. RODAPÉ
+       ======================================================== -->
+  <footer class="rodape-site" role="contentinfo">
+    <div class="container">
+      <div class="rodape-grid">
+        <div class="rodape-coluna">
+          <div class="logo" style="margin-bottom: 0.85rem;">
+            <div class="logo-icone" aria-hidden="true">EA</div>
+            <span>Estilo</span>Ativo
+          </div>
+          <p>
+            Vitrine digital esportiva. Selecione o modelo desejado, confira as fotos em alta resolução e combine seu pedido diretamente pelo WhatsApp.
+          </p>
+        </div>
+
+        <div class="rodape-coluna">
+          <h4>Navegação</h4>
+          <nav class="rodape-links">
+            <a href="index.html#inicio">Página Inicial</a>
+            <a href="index.html#total90">Modelo Total 90</a>
+            <a href="index.html#catalogo">Catálogo Completo</a>
+            <a href="javascript:void(0)" onclick="abrirModalMedidas()">Guia de Medidas</a>
+          </nav>
+        </div>
+
+        <div class="rodape-coluna">
+          <h4>Atendimento WhatsApp</h4>
+          <div class="rodape-contato-item">
+            <img src="assets/icons/whatsapp.svg" alt="" width="16" height="16" />
+            <span>Atendimento comercial direto</span>
+          </div>
+          <p style="font-size: 0.82rem; margin-top: 0.5rem; color: #8E9F94;">
+            Segunda a Sábado das 09h às 19h.<br />
+            Confirmação de estoque e frete na conversa.
+          </p>
+        </div>
+      </div>
+
+      <div class="rodape-inferior">
+        <p>&copy; <span id="ano-atual">2026</span> Estilo Ativo Sportswear. Todos os direitos reservados.</p>
+        <p><a href="index.html#catalogo" style="color: var(--cor-destaque);">&larr; Voltar ao catálogo principal</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/produtos.js"></script>
+  <script src="js/produto-detalhe.js"></script>
+</body>
+</html>
